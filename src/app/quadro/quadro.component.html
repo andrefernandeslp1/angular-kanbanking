@@ -1,0 +1,55 @@
+<div class="container">
+  <p>quadro works!</p>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Novo Card</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="newCardTitle">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="addCard()">Adicionar</button>
+
+  @for (card of cards; track card) {
+    <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">{{ card.title }}</div>
+      <div class="card-body">
+        <p class="card-text">{{ card.description }}</p>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nova Task</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="newTaskText">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addTask(card)">Adicionar</button>
+
+        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event,card.tasks)">
+          @for (task of card.tasks; track task) {
+            <div class="example-box" cdkDrag>
+              {{task.text}}
+              <div style="display:flex; float:right; gap:2px;">
+                <i class="fa-solid fa-strikethrough"></i>
+                <i class="fa-regular fa-circle-check"></i>
+                <!-- <i class="fa-solid fa-circle-check"></i> -->
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </div>
+          }
+        </div>
+
+      </div>
+    </div>
+  }
+</div>
+
+
+<!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  @for (movie of movies; track movie) {
+    <div class="example-box" cdkDrag>
+      {{movie}}
+      <div style="display:flex; float:right; gap:2px;">
+        <i class="fa-solid fa-strikethrough"></i>
+        <i class="fa-regular fa-circle-check"></i>
+        <i class="fa-solid fa-circle-check"></i>
+        <i class="fa-solid fa-trash-can"></i>
+      </div>
+
+    </div>
+  }
+</div> -->
