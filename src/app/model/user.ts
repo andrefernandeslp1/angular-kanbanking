@@ -5,5 +5,5 @@ export interface User {
   username: string;
   password: string;
   email: string;
-  projects: Project[];
+  // projects: Project[];
 }

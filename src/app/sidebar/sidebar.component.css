@@ -1,0 +1,12 @@
+* {
+  color: lightgray;
+}
+
+img {
+  border-bottom: 2px solid gray;
+  padding: 46px 6px 46px 6px;
+}
+
+li {
+  cursor: pointer;
+}

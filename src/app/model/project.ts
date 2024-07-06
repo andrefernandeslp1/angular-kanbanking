@@ -4,4 +4,5 @@ export interface Project {
   title: string;
   description: string;
   cards: Card[];
+  userId: number;
 }

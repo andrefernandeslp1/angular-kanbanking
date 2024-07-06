@@ -1,55 +1,53 @@
-<div class="container">
-  <p>quadro works!</p>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Novo Card</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="newCardTitle">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <button type="button" class="btn btn-primary" (click)="addCard()">Adicionar</button>
-
-  @for (card of cards; track card) {
-    <div class="card text-bg-light mb-3" style="max-width: 18rem;">
-      <div class="card-header">{{ card.title }}</div>
-      <div class="card-body">
-        <p class="card-text">{{ card.description }}</p>
-
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Nova Task</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="newTaskText">
-        </div>
-        <button type="button" class="btn btn-primary" (click)="addTask(card)">Adicionar</button>
-
-        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event,card.tasks)">
-          @for (task of card.tasks; track task) {
-            <div class="example-box" cdkDrag>
-              {{task.text}}
-              <div style="display:flex; float:right; gap:2px;">
-                <i class="fa-solid fa-strikethrough"></i>
-                <i class="fa-regular fa-circle-check"></i>
-                <!-- <i class="fa-solid fa-circle-check"></i> -->
-                <i class="fa-solid fa-trash-can"></i>
-              </div>
-            </div>
-          }
-        </div>
-
-      </div>
+<div class="corpo">
+  <div class="search bg-light">
+    <div class="p-3">
+      <label for="exampleInputEmail1" class="form-label">Novo Card</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="newCardTitle" (keyup.enter)="addCard()">
+      <div id="emailHelp" class="form-text mb-2">Crie um novo card</div>
+      <button type="button" class="btn btn-primary" (click)="addCard()">Adicionar</button>
     </div>
-  }
+    <!-- <button type="button" class="btn btn-outline-primary" (click)="imprimir()">Imprimir</button> -->
+  </div>
+
+  <div class="" >
+    <div class="quadro p-3">
+      @for (card of projects[index].cards; track card) {
+        <div class="card text-bg-light shadow" style="max-width:18rem; min-width:16rem;">
+          <div class="card-header">{{ card.title }}</div>
+          <div class="card-body">
+            <!-- <p class="card-text">{{ card.description }}</p> -->
+            <div class="mb-2">
+              <label for="exampleInputEmail1" class="form-text">Nova Task</label>
+              <!-- <input type="text" class="form-control mb-2" id="exampleInputEmail1" #newTask (keyup.enter)="addTask(card, newTask)"> -->
+              <!-- <button type="button" class="btn btn-outline-primary btn-sm" (click)="addTask(card, newTask)"><i class="fa-solid fa-plus"></i></button> -->
+
+              <div class="input-group input-group-sm mb-3">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" #newTask (keyup.enter)="addTask(card, newTask)">
+                <span class="input-group-text" id="inputGroup-sizing-sm" (click)="addTask(card, newTask)"><i class="fa-solid fa-plus"></i></span>
+              </div>
+
+            </div>
+
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event,card.tasks)">
+              @for (task of card.tasks; track task) {
+                <div class="example-box" cdkDrag>
+                  {{task.text}}
+                  <div style="display:flex; float:right; gap:2px;">
+                    <i class="fa-solid fa-strikethrough"></i>
+                    <i class="fa-regular fa-circle-check"></i>
+                    <!-- <i class="fa-solid fa-circle-check"></i> -->
+                    <i class="fa-solid fa-trash-can"></i>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+      @empty {
+        <p>Quadro vazio. Adicione um Card!</p>
+      }
+    </div>
+  </div>
 </div>
 
-
-<!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-  @for (movie of movies; track movie) {
-    <div class="example-box" cdkDrag>
-      {{movie}}
-      <div style="display:flex; float:right; gap:2px;">
-        <i class="fa-solid fa-strikethrough"></i>
-        <i class="fa-regular fa-circle-check"></i>
-        <i class="fa-solid fa-circle-check"></i>
-        <i class="fa-solid fa-trash-can"></i>
-      </div>
-
-    </div>
-  }
-</div> -->

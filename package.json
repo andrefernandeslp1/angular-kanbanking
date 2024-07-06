@@ -22,7 +22,11 @@
     "@angular/router": "^17.3.0",
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
+    "body-parser": "1.19.0",
     "bootstrap": "^5.3.2",
+    "json-server": "0.16.3",
+    "json-server-auth": "^2.1.0",
+    "jsonwebtoken": "8.5.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -40,5 +44,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.2"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/andrefernandeslp1/angular-kanbanking.git",
+  "author": "andrefernandeslp1 <andre.mdia@gmail.com>",
+  "license": "MIT"
 }

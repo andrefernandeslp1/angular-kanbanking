@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "email": "andre@gmail.com",
+      "password": "$2a$10$Hcay6OjzKXJPkLcrhNfXzu8OWBvUfT6FjrZxlVL3Y7twliWEbS5YS",
+      "id": 1,
+      "username": "Andre"
+    },
+    {
+      "email": "pedro@gmail.com",
+      "password": "$2a$10$18Tt6GpB9USNUJoTkAz8AO5jybDKyXxsCr9dw8KW9TjbEz2JO5z6y",
+      "username":"Pedro",
+      "id": 2
+    },
+    {
+      "email": "joao@gmail.com",
+      "password": "$2a$10$d/dTOwdoXo7tLyOU67MFVudsLsFP.r6rZf1fIzrAQip1GmTqf3lGO",
+      "username": "Joao",
+      "id": 3
+    }
+  ],
+  "projects": [
+    {
+      "userId": 1,
+      "title": "Aplicação Mobile",
+      "description": "Aplicação móvel para Petshop",
+      "cards": [
+        {
+          "title": "Requisitos",
+          "description": "Levantamento de requisitos",
+          "tasks": [
+            {
+              "text": "Entrevistar cliente",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Modelar protótipo",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Reunião com analistas",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "title": "Project 2",
+      "description": "This is a sample project",
+      "cards": [
+        {
+          "title": "Card 1",
+          "description": "This is a sample card",
+          "tasks": [
+            {
+              "text": "Task 1",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Task 2",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Task 3",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "userId": 1,
+      "title": "Project 3",
+      "description": "This is a sample project",
+      "cards": [
+        {
+          "title": "Card 1",
+          "description": "This is a sample card",
+          "tasks": [
+            {
+              "text": "Task 1",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Task 2",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Task 3",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
