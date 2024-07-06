@@ -84,4 +84,16 @@ export class AppService {
   recuperarProjects(): Project[] {
     return this.projectsSource.getValue();
   }
+
+  addProject(project:Project): Observable<Project> {
+    // this.projectsSource.getValue().push(project);
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
+    return this.httpClient.post<Project>(this.API_URL + '/projects', project, { headers });
+  }
+
+  addCard(card:Card, projectId?:number ): Observable<Card> {
+    // this.projectsSource.getValue()[this.indexSource.getValue()].cards.push(card);
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
+    return this.httpClient.post<Card>(this.API_URL + `produtos/${projectId}/cards`, card, { headers });
+  }
 }

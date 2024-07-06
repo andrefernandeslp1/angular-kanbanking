@@ -44,4 +44,16 @@ export class SidebarComponent {
     this.service.setIndex(i);
   }
 
+  // project: Project = {} as Project;
+
+  createProject() {
+    const project = { userId: this.user.id, title: window.prompt('Enter the project name'), description: '', cards: [] } as Project;
+    this.service.addProject(project).subscribe(project => {
+      this.projects.push(project);
+      console.log(project);
+      this.setProject(this.projects.length - 1);
+      // window.location.reload();
+    });
+  }
+
 }

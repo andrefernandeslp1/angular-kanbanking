@@ -31,12 +31,20 @@
             <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event,card.tasks)">
               @for (task of card.tasks; track task) {
                 <div class="example-box" cdkDrag>
-                  {{task.text}}
+                  @if(task.lineThrough) {
+                    <span class="text-decoration-line-through">{{task.text}}</span>
+                  }@else{
+                    <span class="">{{task.text}}</span>
+                  }
                   <div style="display:flex; float:right; gap:2px;">
-                    <i class="fa-solid fa-strikethrough"></i>
-                    <i class="fa-regular fa-circle-check"></i>
+                    <i class="fa-solid fa-strikethrough" (click)="toggleRisco(task)"></i>
+                    @if(task.done) {
+                      <i class="fa-solid fa-circle-check text-success" (click)="toggleDone(task)"></i>
+                    }@else{
+                      <i class="fa-regular fa-circle-check" (click)="toggleDone(task)"></i>
+                    }
                     <!-- <i class="fa-solid fa-circle-check"></i> -->
-                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-trash-can" (click)="deleteTask(card, task)"></i>
                   </div>
                 </div>
               }

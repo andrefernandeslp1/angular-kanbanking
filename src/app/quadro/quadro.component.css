@@ -15,6 +15,10 @@
   overflow-y: auto;
 }
 
+i {
+  cursor: pointer;
+}
+
 /****** drag and drop ******/
 .example-list {
   display:flex;

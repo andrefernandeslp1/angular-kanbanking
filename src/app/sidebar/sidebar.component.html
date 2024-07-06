@@ -1,13 +1,16 @@
 
 <div class="container">
-  <img src="assets/kanban-king-high-resolution-logo-white-transparent.png" alt="Kanban King" class="img-fluid mb-2">
+  <img src="assets/kanban-king-high-resolution-logo-transparent-2.png" alt="Kanban King" class="img-fluid mb-2 text-shadow">
+  <!-- <span class="">GERENCIAMENTO DE PROJETOS</span> -->
+  <!-- <div id="emailHelp" class="form-text mb-2 text-center pb-4 text-white">GERENCIAMENTO DE PROJETOS</div> -->
+  <p class="p-2 mb-2 text-shadow">Bem vindo, {{ user.username }}.</p>
 
-  <p class="p-2 mb-2">Bem vindo, {{ user.username }}.</p>
-  <p class="p-2 mb-2">Projetos:</p>
-  <ul>
+  <p class="p-2 mb-2 text-shadow">Projetos:</p>
+
+  <ul class="text-shadow">
     @for(projeto of projects; track projeto; let idx = $index) {
       @if(idx == index) {
-        <li><a (click)="setProject(idx)" class="active">{{projeto.title}}</a></li>
+        <li><a (click)="setProject(idx)" class="text-warning">{{projeto.title}}</a></li>
       }
       @else {
         <li><a (click)="setProject(idx)">{{projeto.title}}</a></li>
@@ -16,5 +19,7 @@
       <p>Nenhum projeto encontrado.</p>
     }
   </ul>
+
+  <button type="button" class="btn btn-light w-100" (click)="createProject()">Criar novo Projeto</button>
 </div>
 
