@@ -4,6 +4,7 @@ import { Card } from '../model/card';
 import { Project } from '../model/project';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { User } from '../model/user';
+import { Task } from '../model/task';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,9 @@ export class AppService {
 
   setIndex(index: number) {
     this.indexSource.next(index);
+  }
+  getIndex(): Observable<number> {
+    return this.index;
   }
 
   signup(user: User): Observable<HttpResponse<any>>{
@@ -86,14 +90,30 @@ export class AppService {
   }
 
   addProject(project:Project): Observable<Project> {
-    // this.projectsSource.getValue().push(project);
+    // this.projectsSource.next(project);
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
     return this.httpClient.post<Project>(this.API_URL + '/projects', project, { headers });
   }
 
-  addCard(card:Card, projectId?:number ): Observable<Card> {
-    // this.projectsSource.getValue()[this.indexSource.getValue()].cards.push(card);
+  updateProject(project:Project): Observable<Project> {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
-    return this.httpClient.post<Card>(this.API_URL + `produtos/${projectId}/cards`, card, { headers });
+    return this.httpClient.patch<Project>(this.API_URL + '/projects/' + project.id, project, { headers });
+  }
+
+  // addCard(card:Card, projectId?:number ): Observable<Card> {
+  //   // this.projectsSource.getValue()[this.indexSource.getValue()].cards.push(card);
+  //   const userId: any = localStorage.getItem('userId');
+  //   const requestBody = { ...card, userId }
+  //   const headers = new HttpHeaders()
+  //       .set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
+  //       // .set('userId', userId);
+  //   return this.httpClient.post<Card>(this.API_URL + `/projects/${projectId}/cards`, requestBody, { headers });
+  // }
+
+  addTask(task:Task, indexCard: any, card: any): void {
+    this.projectsSource.getValue()[this.indexSource.getValue()].cards[indexCard].tasks.push(task);
+    const projectId = this.projectsSource.getValue()[this.indexSource.getValue()].id;
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
+    this.httpClient.patch<Card>(this.API_URL + `/projects/${projectId}/cards/${card.id}`,card , { headers });
   }
 }

@@ -28,16 +28,12 @@ export class SidebarComponent {
     const userId = localStorage.getItem('userId');
     console.log(userId);
     this.service.getUser(Number(userId)).subscribe(user => {
-      this.user = user; // Now correctly passing a User object
-      console.log(this.user);
-      console.log(this.user);
+      this.user = user;
     });
     this.service.getProjects(userId).subscribe(projects => {
       this.projects = projects;
-      console.log(projects);
-      console.log(this.projects);
     });
-    this.setProject(0);
+    // this.setProject(0);
   }
 
   setProject(i: any) {
@@ -49,11 +45,16 @@ export class SidebarComponent {
   createProject() {
     const project = { userId: this.user.id, title: window.prompt('Enter the project name'), description: '', cards: [] } as Project;
     this.service.addProject(project).subscribe(project => {
+      // this.setProject(this.projects.length);
       this.projects.push(project);
       console.log(project);
       this.setProject(this.projects.length - 1);
-      // window.location.reload();
     });
+    // this.service.addProject(project).subscribe(project => {
+    //   this.projects.push(project);
+    //   console.log(project);
+    //   this.setProject(this.projects.length - 1);
+    // });
   }
 
 }

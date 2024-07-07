@@ -26,7 +26,7 @@ export class QuadroComponent {
 
   service = inject(AppService);
 
-  index = 0;
+  index!:number;
   projects: Project[] = [];
 
   constructor() {
@@ -54,24 +54,26 @@ export class QuadroComponent {
   newCardTitle: string = '';
 
   addCard() {
-    console.log(this.newCardTitle);
     if (this.newCardTitle) {
-      let newCard: Card = { title: this.newCardTitle, description: '', tasks: [] };
-      this.projects[this.index].cards.push(newCard);
-      this.newCardTitle = '';
+      const newCard: Card = { title: this.newCardTitle, description: '', tasks: [] };
       // this.service.addCard(newCard, this.projects[this.index].id).subscribe(card => {
-      //   this.projects[this.index].cards[this.projects[this.index].cards.length - 1] = card;
+      //   this.projects[this.index].cards.push(card);
       //   console.log(card);
       // });
+      this.projects[this.index].cards.push(newCard);
+      this.service.updateProject(this.projects[this.index]).subscribe(project => {
+        console.log(project);
+      });
     }
   }
 
-  addTask(card: Card, newTaskText: HTMLInputElement) {
-    console.log(newTaskText.value);
+  addTask(card: Card, newTaskText: HTMLInputElement, indexCard: any) {
+    // console.log(newTaskText.value);
     if (newTaskText.value) {
       let newTask: Task = { text: newTaskText.value, done: false, lineThrough: false };
       card.tasks.push(newTask);
       newTaskText.value = '';
+      this.service.addTask(newTask, indexCard, card);
       // this.service.addCard(card, this.projects[this.index].id).subscribe(card => {
       //   console.log(card);
       // });

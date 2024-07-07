@@ -11,7 +11,7 @@
 
   <div class="" >
     <div class="quadro p-3">
-      @for (card of projects[index].cards; track card) {
+      @for (card of projects[index].cards; track card; let indexCard = $index) {
         <div class="card text-bg-light shadow" style="max-width:18rem; min-width:16rem;">
           <div class="card-header">{{ card.title }}</div>
           <div class="card-body">
@@ -22,8 +22,8 @@
               <!-- <button type="button" class="btn btn-outline-primary btn-sm" (click)="addTask(card, newTask)"><i class="fa-solid fa-plus"></i></button> -->
 
               <div class="input-group input-group-sm mb-3">
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" #newTask (keyup.enter)="addTask(card, newTask)">
-                <span class="input-group-text" id="inputGroup-sizing-sm" (click)="addTask(card, newTask)"><i class="fa-solid fa-plus"></i></span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" #newTask (keyup.enter)="addTask(card, newTask, indexCard)">
+                <span class="input-group-text" id="inputGroup-sizing-sm" (click)="addTask(card, newTask, indexCard)"><i class="fa-solid fa-plus"></i></span>
               </div>
 
             </div>
