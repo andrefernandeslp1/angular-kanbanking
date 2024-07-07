@@ -26,29 +26,29 @@ export class SidebarComponent {
 
   ngOnInit() {
     const userId = localStorage.getItem('userId');
-    console.log(userId);
-    this.service.getUser(Number(userId)).subscribe(user => {
-      this.user = user;
-    });
-    this.service.getProjects(userId).subscribe(projects => {
-      this.projects = projects;
-    });
-    // this.setProject(0);
+    this.service.getUser(userId).subscribe(user => { this.user = user; });
+    this.service.getProjects(userId).subscribe(projects => { this.projects = projects; });
+    this.service.getIndex().subscribe(index => { this.index = index; });
   }
 
   setProject(i: any) {
-    this.service.setIndex(i);
+    this.service.setIndex(i); // fica visível para todos os componentes
+    // this.index = i; // não fica visível para todos os componentes
   }
 
   // project: Project = {} as Project;
 
   createProject() {
     const project = { userId: this.user.id, title: window.prompt('Enter the project name'), description: '', cards: [] } as Project;
-    this.service.addProject(project).subscribe(project => {
+    this.projects.push(project);
+    this.service.addProject(project, this.projects).subscribe(project => {
       // this.setProject(this.projects.length);
-      this.projects.push(project);
       console.log(project);
-      this.setProject(this.projects.length - 1);
+      // this.projects.push(project);
+      // this.setProject(this.projects.length - 1);
+    });
+    this.service.setIndex(this.projects.length - 1).subscribe(index => {
+      console.log(index);
     });
     // this.service.addProject(project).subscribe(project => {
     //   this.projects.push(project);

@@ -112,97 +112,17 @@
     },
     {
       "userId": 2,
-      "title": "teste",
+      "title": "projeto 0",
       "description": "",
-      "cards": [
-        {
-          "title": "aaaaaaaaaa",
-          "description": "",
-          "tasks": []
-        }
-      ],
+      "cards": [],
       "id": 4
     },
     {
       "userId": 2,
-      "title": "teste2",
+      "title": "projeto 1",
       "description": "",
-      "cards": [
-        {
-          "title": "bbbbbbbbb",
-          "description": "",
-          "tasks": []
-        }
-      ],
+      "cards": [],
       "id": 5
-    },
-    {
-      "userId": 2,
-      "title": "111111",
-      "description": "",
-      "cards": [
-        {
-          "title": "teste",
-          "description": "",
-          "tasks": []
-        }
-      ],
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "title": "222222222222",
-      "description": "",
-      "cards": [],
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "title": "xxxxx",
-      "description": "",
-      "cards": [],
-      "id": 8
-    },
-    {
-      "userId": 2,
-      "title": "dddddddd",
-      "description": "",
-      "cards": [
-        {
-          "title": "sas",
-          "description": "",
-          "tasks": []
-        }
-      ],
-      "id": 9
-    },
-    {
-      "userId": 2,
-      "title": "sasasasa",
-      "description": "",
-      "cards": [],
-      "id": 10
-    },
-    {
-      "userId": 2,
-      "title": "bbbbbbbb",
-      "description": "",
-      "cards": [],
-      "id": 11
-    },
-    {
-      "userId": 2,
-      "title": "wwwwwwwwww",
-      "description": "",
-      "cards": [],
-      "id": 12
-    },
-    {
-      "userId": 2,
-      "title": "teste",
-      "description": "",
-      "cards": [],
-      "id": 13
     }
   ]
 }

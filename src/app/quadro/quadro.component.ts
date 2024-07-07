@@ -35,14 +35,9 @@ export class QuadroComponent {
   }
 
   ngOnInit() {
-    // this.service.projects.subscribe(projects => this.projects = projects);
-    // this.service.index.subscribe(index => this.index = index);
     const userId = localStorage.getItem('userId');
-    this.service.getProjects(userId).subscribe(projects => {
-      this.projects = projects;
-      console.log(projects);
-      console.log(this.projects);
-    });
+    this.service.getProjects(userId).subscribe(projects => { this.projects = projects; });
+    this.service.getIndex().subscribe(index => { this.index = index; });
   }
 
   imprimir() {
@@ -61,7 +56,7 @@ export class QuadroComponent {
       //   console.log(card);
       // });
       this.projects[this.index].cards.push(newCard);
-      this.service.updateProject(this.projects[this.index]).subscribe(project => {
+      this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
         console.log(project);
       });
     }

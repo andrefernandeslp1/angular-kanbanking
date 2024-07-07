@@ -26,8 +26,12 @@ export class AppService {
 
   ngOnInit() { }
 
-  setIndex(index: number) {
+  // setIndex(index: number) {
+  //   this.indexSource.next(index);
+  // }
+  setIndex(index: number): Observable<number> {
     this.indexSource.next(index);
+    return this.index;
   }
   getIndex(): Observable<number> {
     return this.index;
@@ -75,7 +79,7 @@ export class AppService {
     );
   }
 
-  getUser(id:number): Observable<User> {
+  getUser(id:any): Observable<User> {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
     return this.httpClient.get<User>(this.API_URL + '/users/' + id, { headers });
   }
@@ -89,13 +93,14 @@ export class AppService {
     return this.projectsSource.getValue();
   }
 
-  addProject(project:Project): Observable<Project> {
-    // this.projectsSource.next(project);
+  addProject(project:Project, projects:Project[]): Observable<Project> {
+    this.projectsSource.next(projects);
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
     return this.httpClient.post<Project>(this.API_URL + '/projects', project, { headers });
   }
 
-  updateProject(project:Project): Observable<Project> {
+  updateProject(project:Project, projects:Project[]): Observable<Project> {
+    this.projectsSource.next(projects);
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
     return this.httpClient.patch<Project>(this.API_URL + '/projects/' + project.id, project, { headers });
   }
