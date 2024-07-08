@@ -32,29 +32,22 @@ export class SidebarComponent {
   }
 
   setProject(i: any) {
-    this.service.setIndex(i); // fica visível para todos os componentes
-    // this.index = i; // não fica visível para todos os componentes
+    this.service.setIndex(i); // fica visível para todos os componentes subscritos a indexSource
+    // this.index = i; // NÃO fica visível para todos os componentes subscritos a indexSource
   }
 
-  // project: Project = {} as Project;
-
   createProject() {
-    const project = { userId: this.user.id, title: window.prompt('Enter the project name'), description: '', cards: [] } as Project;
-    this.projects.push(project);
-    this.service.addProject(project, this.projects).subscribe(project => {
-      // this.setProject(this.projects.length);
-      console.log(project);
-      // this.projects.push(project);
-      // this.setProject(this.projects.length - 1);
-    });
-    this.service.setIndex(this.projects.length - 1).subscribe(index => {
-      console.log(index);
-    });
-    // this.service.addProject(project).subscribe(project => {
-    //   this.projects.push(project);
-    //   console.log(project);
-    //   this.setProject(this.projects.length - 1);
-    // });
+    const projectName = window.prompt('Enter the project name');
+    if (projectName) {
+      const project = { userId: this.user.id, title: projectName, description: '', cards: [] } as Project;
+      this.projects.push(project);
+      this.service.addProject(project, this.projects).subscribe(project => {
+        console.log(project);
+      });
+      this.service.setIndex(this.projects.length - 1).subscribe(index => {
+        console.log(index);
+      });
+    }
   }
 
 }

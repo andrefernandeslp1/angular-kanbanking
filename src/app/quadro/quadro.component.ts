@@ -40,21 +40,11 @@ export class QuadroComponent {
     this.service.getIndex().subscribe(index => { this.index = index; });
   }
 
-  imprimir() {
-    console.log(this.projects);
-    console.log(this.projects[this.index]);
-    console.log(this.projects[this.index].cards);
-  }
-
   newCardTitle: string = '';
 
   addCard() {
     if (this.newCardTitle) {
       const newCard: Card = { title: this.newCardTitle, description: '', tasks: [] };
-      // this.service.addCard(newCard, this.projects[this.index].id).subscribe(card => {
-      //   this.projects[this.index].cards.push(card);
-      //   console.log(card);
-      // });
       this.projects[this.index].cards.push(newCard);
       this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
         console.log(project);
@@ -62,42 +52,56 @@ export class QuadroComponent {
     }
   }
 
-  addTask(card: Card, newTaskText: HTMLInputElement, indexCard: any) {
-    // console.log(newTaskText.value);
+  addTask(newTaskText: HTMLInputElement, indexCard: any) {
     if (newTaskText.value) {
       let newTask: Task = { text: newTaskText.value, done: false, lineThrough: false };
-      card.tasks.push(newTask);
+      // card.tasks.push(newTask);
+      this.projects[this.index].cards[indexCard].tasks.push(newTask);
+      this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
+        console.log(project);
+      });
       newTaskText.value = '';
-      this.service.addTask(newTask, indexCard, card);
-      // this.service.addCard(card, this.projects[this.index].id).subscribe(card => {
-      //   console.log(card);
-      // });
     }
   }
 
-  // addTask(card: Card, newTaskText: HTMLInputElement) {
-  //   console.log(newTaskText.value);
-  //   if (newTaskText.value) {
-  //     let newTask: Task = { text: newTaskText.value, done: false, lineThrough: false };
-  //     card.tasks.push(newTask);
-  //     newTaskText.value = '';
-  //   }
-  // }
-
   drop(event: CdkDragDrop<Task[]>, tasks: Task[]) {
     moveItemInArray(tasks, event.previousIndex, event.currentIndex);
+    this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
+      console.log(project);
+    });
   }
 
   toggleRisco(task: Task) {
     task.lineThrough = !task.lineThrough;
+    this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
+      console.log(project);
+    });
   }
+
+  editTask(task: Task) {
+    const newText = window.prompt('Edit the task', task.text);
+    if (newText) {
+      task.text = newText;
+      this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
+        console.log(project);
+      });
+    }
+  }
+
 
   toggleDone(task: Task) {
     task.done = !task.done;
+    this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
+      console.log(project);
+    });
+
   }
 
   deleteTask(card: Card, task: Task) {
     card.tasks = card.tasks.filter(t => t !== task);
+    this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
+      console.log(project);
+    });
   }
 
 }

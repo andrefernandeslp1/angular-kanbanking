@@ -1,5 +1,5 @@
 * {
-  /* color: lightgray; */
+  color: white;
 }
 
 img {
@@ -7,10 +7,21 @@ img {
   padding: 20px;
 }
 
+ul {
+  padding: 10px;
+  /* margin: 0; */
+  list-style-type: none;
+}
+
 li {
   cursor: pointer;
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
+}
+
+.projetoAtivo {
+  font-weight: bold;
 }
