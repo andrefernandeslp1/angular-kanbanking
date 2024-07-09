@@ -5,3 +5,13 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.btn {
+  background-color: #28353B;
+  color: white;
+}
+/* color on hover */
+.btn:hover {
+  background-color: #28353B;
+  color: #FE6152;
+}

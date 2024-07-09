@@ -14,6 +14,7 @@ import { Project } from '../model/project';
 import { AppService } from '../service/app.service';
 import { User } from '../model/user';
 import { LandingComponent } from "../landing/landing.component";
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-quadro',
@@ -26,12 +27,17 @@ export class QuadroComponent {
 
   service = inject(AppService);
 
+  // private subscription: Subscription;
+
   index!:number;
   projects: Project[] = [];
 
   constructor() {
     this.service.projects.subscribe(projects => this.projects = projects);
     this.service.index.subscribe(index => this.index = index);
+
+    // this.subscription = this.service.projects.subscribe(projects => this.projects = projects);
+    // this.subscription = this.service.index.subscribe(index => this.index = index);
   }
 
   ngOnInit() {
@@ -39,6 +45,10 @@ export class QuadroComponent {
     this.service.getProjects(userId).subscribe(projects => { this.projects = projects; });
     this.service.getIndex().subscribe(index => { this.index = index; });
   }
+
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
 
   newCardTitle: string = '';
 

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AppService } from '../service/app.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-landing',
@@ -20,7 +21,7 @@ export class LandingComponent {
   formBuilder = inject(FormBuilder);
   router = inject(Router);
 
-  constructor()
+  constructor(private snackBar:MatSnackBar)
   {
     this.form = this.formBuilder.group({
       username: [null],
@@ -35,7 +36,8 @@ export class LandingComponent {
         console.log(v),
         this.router.navigate(['/work-area']);
       },
-      error: (e) => console.error(e)
+      // error: (e) => console.error(e)
+      error: (e) => this.snackBar.open(e.error , "", {duration:2000 })
     });
   }
 
@@ -45,7 +47,8 @@ export class LandingComponent {
         console.log(v),
         this.router.navigate(['/work-area']);
       },
-      error: (e) => console.error(e)
+      // error: (e) => console.error(e)
+      error: (e) => this.snackBar.open(e.error, "", {duration:2000 })
     });
   }
 

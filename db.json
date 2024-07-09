@@ -17,6 +17,36 @@
       "password": "$2a$10$d/dTOwdoXo7tLyOU67MFVudsLsFP.r6rZf1fIzrAQip1GmTqf3lGO",
       "username": "João",
       "id": 3
+    },
+    {
+      "email": "caio@gmail.com",
+      "password": "$2a$10$9Tv8cIDygcJR4vtCEclLu.M5OYeZuaegnoCnRXAw3BCreIgfiFlXK",
+      "username": "caio",
+      "id": 4
+    },
+    {
+      "email": "tico@gmail.com",
+      "password": "$2a$10$ntjJniVB8XgKtZmDqaQQ8uC.5IIyZc0QMCDf8flh5f605K1avi.A2",
+      "username": "tico",
+      "id": 5
+    },
+    {
+      "email": "marcu@gmail.com",
+      "password": "$2a$10$UsJI0ivLdfIMnpk.2sTOKO5bv7Q8sQw.eJ01Mh3B.OxUdg3n8lism",
+      "username": "marcu",
+      "id": 6
+    },
+    {
+      "email": "taco@gmail.com",
+      "password": "$2a$10$UzUdhaHKhP7nW7uhL223Z.DKFyZatW9Ewslii2wnZfliEer1dRBra",
+      "username": "taco",
+      "id": 7
+    },
+    {
+      "email": "beto@gmail.com",
+      "password": "$2a$10$Lm0sItJviMeuSN1OYsJO2umcxkOSE/dECtl8HVpyUZxh5MLqTpDdK",
+      "username": "beto",
+      "id": 8
     }
   ],
   "projects": [
@@ -34,27 +64,43 @@
             {
               "text": "Entrevistar cliente",
               "done": true,
-              "lineThrough": false
+              "lineThrough": true
             },
             {
               "text": "marcar médico",
-              "done": false,
-              "lineThrough": false
+              "done": true,
+              "lineThrough": true
             },
             {
               "text": "cortar grama",
               "done": true,
-              "lineThrough": false
+              "lineThrough": true
             },
             {
               "text": "pes dasds dadasdasds dasdasdsa asdas",
+              "done": true,
+              "lineThrough": true
+            }
+          ]
+        },
+        {
+          "title": "teste",
+          "description": "",
+          "tasks": [
+            {
+              "text": "task 1",
               "done": false,
               "lineThrough": false
             },
             {
-              "text": "Modelar protótipo",
-              "done": true,
-              "lineThrough": true
+              "text": "task 2",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "task 3",
+              "done": false,
+              "lineThrough": false
             }
           ]
         }
@@ -87,6 +133,17 @@
               "lineThrough": false
             }
           ]
+        },
+        {
+          "title": "Arquiteto",
+          "description": "",
+          "tasks": [
+            {
+              "text": "Reunião",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
         }
       ]
     },
@@ -102,17 +159,17 @@
           "description": "Desenvolvimento do projeto",
           "tasks": [
             {
-              "text": "Desenvolver front-end",
-              "done": false,
-              "lineThrough": false
-            },
-            {
               "text": "Desenvolver back-end",
-              "done": false,
+              "done": true,
               "lineThrough": false
             },
             {
               "text": "Testar aplicação",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Desenvolver front-end",
               "done": false,
               "lineThrough": false
             }
@@ -121,116 +178,122 @@
       ]
     },
     {
-      "userId": 2,
-      "title": "projeto 0",
+      "userId": 4,
+      "title": "p-1",
       "description": "",
-      "cards": [
-        {
-          "title": "card-1",
-          "description": "",
-          "tasks": [
-            {
-              "text": "task-3",
-              "done": false,
-              "lineThrough": true
-            },
-            {
-              "text": "task-2",
-              "done": false,
-              "lineThrough": true
-            },
-            {
-              "text": "task-1",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        },
-        {
-          "title": "card-2",
-          "description": "",
-          "tasks": [
-            {
-              "text": "task-4",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "task-5",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "task-3",
-              "done": false,
-              "lineThrough": true
-            }
-          ]
-        }
-      ],
+      "cards": [],
       "id": 4
     },
     {
-      "userId": 2,
-      "title": "projeto 1",
+      "userId": 5,
+      "title": "p-11",
       "description": "",
       "cards": [
         {
-          "title": "card-3",
+          "title": "c-11",
           "description": "",
-          "tasks": [
-            {
-              "text": "task-7",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
+          "tasks": []
         }
       ],
       "id": 5
     },
     {
-      "userId": 1,
-      "title": "Teste",
-      "description": "",
-      "cards": [],
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "title": "teste-2",
+      "userId": 5,
+      "title": "p-12",
       "description": "",
       "cards": [
         {
-          "title": "card 1",
+          "title": "c-12",
+          "description": "",
+          "tasks": []
+        }
+      ],
+      "id": 6
+    },
+    {
+      "userId": 6,
+      "title": "sssssssss",
+      "description": "",
+      "cards": [
+        {
+          "title": "ddd",
+          "description": "",
+          "tasks": []
+        }
+      ],
+      "id": 7
+    },
+    {
+      "userId": 7,
+      "title": "p-1",
+      "description": "",
+      "cards": [
+        {
+          "title": "c-1",
           "description": "",
           "tasks": [
             {
-              "text": "task 1",
-              "done": false,
-              "lineThrough": false
+              "text": "task 3",
+              "done": true,
+              "lineThrough": true
             },
             {
               "text": "task 2",
+              "done": true,
+              "lineThrough": true
+            },
+            {
+              "text": "task 1",
+              "done": false,
+              "lineThrough": true
+            }
+          ]
+        }
+      ],
+      "id": 8
+    },
+    {
+      "userId": 8,
+      "title": "teste",
+      "description": "",
+      "cards": [
+        {
+          "title": "card-teste",
+          "description": "",
+          "tasks": [
+            {
+              "text": "kkkk",
               "done": false,
               "lineThrough": false
             },
             {
-              "text": "task 3",
+              "text": "wwww",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "sssssss",
               "done": false,
               "lineThrough": false
             }
           ]
         }
       ],
-      "id": 7
+      "id": 9
     },
     {
-      "userId": 1,
-      "title": "teste 3",
+      "userId": 8,
+      "title": "teste2",
       "description": "",
       "cards": [],
-      "id": 8
+      "id": 10
+    },
+    {
+      "userId": 8,
+      "title": "teste3",
+      "description": "",
+      "cards": [],
+      "id": 11
     }
   ]
 }

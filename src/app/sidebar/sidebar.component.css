@@ -1,5 +1,6 @@
 * {
   color: white;
+  /* background-color: #102E44; */
 }
 
 img {
@@ -22,6 +23,7 @@ a {
   text-decoration: none;
 }
 
-.projetoAtivo {
+.projetoAtivo, .iconeAtivo {
   font-weight: bold;
+  color: #FE6152;
 }

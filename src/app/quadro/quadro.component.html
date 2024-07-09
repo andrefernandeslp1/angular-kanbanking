@@ -4,53 +4,57 @@
       <label for="exampleInputEmail1" class="form-label">Novo Card</label>
       <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="newCardTitle" (keyup.enter)="addCard()">
       <div id="emailHelp" class="form-text mb-2">Crie um novo card</div>
-      <button type="button" class="btn btn-primary" (click)="addCard()">Adicionar</button>
+      <button type="button" class="btn" (click)="addCard()">Adicionar</button>
     </div>
   </div>
 
   <div class="" >
     <div class="quadro p-3">
-      @for (card of projects[index].cards; track card; let indexCard = $index) {
-        <div class="card text-bg-light shadow" style="max-width:20rem; min-width:16rem;">
-          <div class="card-header">{{ card.title }}</div>
-          <div class="card-body">
-            <!-- <p class="card-text">{{ card.description }}</p> -->
-            <div class="mb-2">
-              <label for="exampleInputEmail1" class="form-text">Nova Task</label>
+      @if(projects.length > 0) {
+        @for (card of projects[index].cards; track card; let indexCard = $index) {
+          <div class="card text-bg-light shadow" style="max-width:20rem; min-width:16rem;">
+            <div class="card-header">{{ card.title }}</div>
+            <div class="card-body">
+              <!-- <p class="card-text">{{ card.description }}</p> -->
+              <div class="mb-2">
+                <label for="exampleInputEmail1" class="form-text">Nova Task</label>
 
-              <div class="input-group input-group-sm mb-3">
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" #newTask (keyup.enter)="addTask( newTask, indexCard)">
-                <span class="input-group-text" id="inputGroup-sizing-sm" (click)="addTask(newTask, indexCard)"><i class="fa-solid fa-plus"></i></span>
+                <div class="input-group input-group-sm mb-3">
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" #newTask (keyup.enter)="addTask( newTask, indexCard)">
+                  <span class="input-group-text" id="inputGroup-sizing-sm" (click)="addTask(newTask, indexCard)"><i class="fa-solid fa-plus"></i></span>
+                </div>
+
               </div>
 
-            </div>
-
-            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event,card.tasks)">
-              @for (task of card.tasks; track task; let indexTask = $index) {
-                <div class="example-box" cdkDrag>
-                  @if(task.lineThrough) {
-                    <span class="text-decoration-line-through">{{task.text}}</span>
-                  }@else{
-                    <span class="">{{task.text}}</span>
-                  }
-                  <div style="display:flex; float:right; gap:2px;">
-                    <i class="fa-solid fa-strikethrough" (click)="toggleRisco(task)"></i>
-                    <i class="fa-solid fa-pen" (click)="editTask(task)"></i>
-                    @if(task.done) {
-                      <i class="fa-solid fa-circle-check text-success" (click)="toggleDone(task)"></i>
+              <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event,card.tasks)">
+                @for (task of card.tasks; track task; let indexTask = $index) {
+                  <div class="example-box" cdkDrag>
+                    @if(task.lineThrough) {
+                      <span class="text-decoration-line-through">{{task.text}}</span>
                     }@else{
-                      <i class="fa-regular fa-circle-check" (click)="toggleDone(task)"></i>
+                      <span class="">{{task.text}}</span>
                     }
-                    <i class="fa-solid fa-trash-can" (click)="deleteTask(card, task)"></i>
+                    <div style="display:flex; float:right; gap:2px;">
+                      <i class="fa-solid fa-strikethrough" (click)="toggleRisco(task)"></i>
+                      <i class="fa-solid fa-pen" (click)="editTask(task)"></i>
+                      @if(task.done) {
+                        <i class="fa-solid fa-circle-check text-success" (click)="toggleDone(task)"></i>
+                      }@else{
+                        <i class="fa-regular fa-circle-check" (click)="toggleDone(task)"></i>
+                      }
+                      <i class="fa-solid fa-trash-can" (click)="deleteTask(card, task)"></i>
+                    </div>
                   </div>
-                </div>
-              }
+                }
+              </div>
             </div>
           </div>
-        </div>
-      }
-      @empty {
-        <p>Quadro vazio. Adicione um Card!</p>
+        }
+        @empty {
+          <p>Quadro vazio. Adicione um Card!</p>
+        }
+      }@else {
+        <p>Crie um projeto para adicionar cards.</p>
       }
     </div>
   </div>

@@ -14,7 +14,7 @@ export class SidebarComponent {
 
   service = inject(AppService);
 
-  index = 0;
+  index!: number;
   projects: Project[] = [];
   user: User = {} as User;
 
@@ -42,6 +42,7 @@ export class SidebarComponent {
       const project = { userId: this.user.id, title: projectName, description: '', cards: [] } as Project;
       this.projects.push(project);
       this.service.addProject(project, this.projects).subscribe(project => {
+        this.projects[this.projects.length - 1] = project;
         console.log(project);
       });
       this.service.setIndex(this.projects.length - 1).subscribe(index => {

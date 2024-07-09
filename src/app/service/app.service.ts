@@ -16,7 +16,7 @@ export class AppService {
   private projectsSource = new BehaviorSubject<Project[]>([]);
   projects = this.projectsSource.asObservable();
 
-  private userSource = new BehaviorSubject<User>({} as User); // Initialize with an empty User object});
+  private userSource = new BehaviorSubject<User>({} as User); // Initialize with an empty User object
   user = this.userSource.asObservable();
 
   private indexSource = new BehaviorSubject<number>(0);
@@ -45,6 +45,9 @@ export class AppService {
         if(response.body.user.id) {
           localStorage.setItem('userId', response.body.user.id);
         }
+        this.projectsSource.next([]);
+        this.userSource.next(response.body.user);
+        this.indexSource.next(0);
       })
     );
   }
@@ -72,6 +75,8 @@ export class AppService {
           console.log(projects);
           console.log(this.projects);
         });
+
+        this.indexSource.next(0);
       })
     );
   }
@@ -97,6 +102,8 @@ export class AppService {
   }
 
   updateProject(project:Project, projects:Project[]): Observable<Project> {
+    console.log('AQUI');
+    console.log(project);
     this.projectsSource.next(projects);
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
     return this.httpClient.patch<Project>(this.API_URL + '/projects/' + project.id, project, { headers });
