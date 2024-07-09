@@ -51,4 +51,16 @@ export class SidebarComponent {
     }
   }
 
+  deleteProject(id:any) {
+    if (window.confirm('Are you sure you want to delete this project?')) {
+      this.projects.splice(this.projects.findIndex(project => project.id === id), 1);
+      this.service.deleteProject(id).subscribe(project => {
+        console.log(project);
+      });
+      this.service.setIndex(0).subscribe(index => {
+        console.log(index);
+      });
+    }
+  }
+
 }

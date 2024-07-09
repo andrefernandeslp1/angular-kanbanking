@@ -37,7 +37,7 @@ export class LandingComponent {
         this.router.navigate(['/work-area']);
       },
       // error: (e) => console.error(e)
-      error: (e) => this.snackBar.open(e.error , "", {duration:2000 })
+      error: (e) => this.snackBar.open(e.error , "⚠️", {duration:2000 })
     });
   }
 
@@ -48,7 +48,7 @@ export class LandingComponent {
         this.router.navigate(['/work-area']);
       },
       // error: (e) => console.error(e)
-      error: (e) => this.snackBar.open(e.error, "", {duration:2000 })
+      error: (e) => this.snackBar.open(e.error, "⚠️", {duration:2000 })
     });
   }
 

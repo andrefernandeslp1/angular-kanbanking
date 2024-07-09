@@ -109,4 +109,9 @@ export class AppService {
     return this.httpClient.patch<Project>(this.API_URL + '/projects/' + project.id, project, { headers });
   }
 
+  deleteProject(id:any){
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('authToken'));
+    return this.httpClient.delete(this.API_URL + '/projects/' + id, { headers });
+  }
+
 }

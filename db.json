@@ -47,106 +47,15 @@
       "password": "$2a$10$Lm0sItJviMeuSN1OYsJO2umcxkOSE/dECtl8HVpyUZxh5MLqTpDdK",
       "username": "beto",
       "id": 8
+    },
+    {
+      "email": "campos@gmail.com",
+      "password": "$2a$10$k0G2fyNgtCzHrufzOOOxW.Gsu68saQ1rJDm/jvzUNXtvsEGwj7ssC",
+      "username": "campos",
+      "id": 9
     }
   ],
   "projects": [
-    {
-      "id": 1,
-      "userId": 1,
-      "title": "Aplicação Mobile",
-      "description": "Aplicação móvel para Petshop",
-      "cards": [
-        {
-          "id": 1,
-          "title": "Requisitos",
-          "description": "Levantamento de requisitos",
-          "tasks": [
-            {
-              "text": "Entrevistar cliente",
-              "done": true,
-              "lineThrough": true
-            },
-            {
-              "text": "marcar médico",
-              "done": true,
-              "lineThrough": true
-            },
-            {
-              "text": "cortar grama",
-              "done": true,
-              "lineThrough": true
-            },
-            {
-              "text": "pes dasds dadasdasds dasdasdsa asdas",
-              "done": true,
-              "lineThrough": true
-            }
-          ]
-        },
-        {
-          "title": "teste",
-          "description": "",
-          "tasks": [
-            {
-              "text": "task 1",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "task 2",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "task 3",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "title": "Obra do apartamento",
-      "description": "Reforma do apartamento",
-      "cards": [
-        {
-          "id": 2,
-          "title": "Planejamento",
-          "description": "Planejamento da obra",
-          "tasks": [
-            {
-              "text": "Contratar arquiteto",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "Contratar engenheiro",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "Fazer orçamentos",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        },
-        {
-          "title": "Arquiteto",
-          "description": "",
-          "tasks": [
-            {
-              "text": "Reunião",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        }
-      ]
-    },
     {
       "id": 3,
       "userId": 1,
@@ -294,6 +203,52 @@
       "description": "",
       "cards": [],
       "id": 11
+    },
+    {
+      "userId": 9,
+      "title": "sdssdas",
+      "description": "",
+      "cards": [
+        {
+          "title": "fffff",
+          "description": "",
+          "tasks": [
+            {
+              "text": "sdfsd",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "sdfsd",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "sdfds",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "ssssssssssss",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        }
+      ],
+      "id": 12
+    },
+    {
+      "userId": 9,
+      "title": "bbbbbb",
+      "description": "",
+      "cards": [],
+      "id": 13
     }
   ]
 }

@@ -15,6 +15,7 @@ import { AppService } from '../service/app.service';
 import { User } from '../model/user';
 import { LandingComponent } from "../landing/landing.component";
 import { Subscription } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-quadro',
@@ -32,7 +33,7 @@ export class QuadroComponent {
   index!:number;
   projects: Project[] = [];
 
-  constructor() {
+  constructor(private snackBar:MatSnackBar) {
     this.service.projects.subscribe(projects => this.projects = projects);
     this.service.index.subscribe(index => this.index = index);
 
@@ -53,12 +54,20 @@ export class QuadroComponent {
   newCardTitle: string = '';
 
   addCard() {
-    if (this.newCardTitle) {
-      const newCard: Card = { title: this.newCardTitle, description: '', tasks: [] };
-      this.projects[this.index].cards.push(newCard);
-      this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
-        console.log(project);
-      });
+    if (this.projects.length > 0 ) {
+      if (this.newCardTitle) {
+        const newCard: Card = { title: this.newCardTitle, description: '', tasks: [] };
+        this.projects[this.index].cards.push(newCard);
+        this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
+          console.log(project);
+        });
+      } else {
+        this.snackBar.open("Input Vazio.", "⚠️", {duration:2000 });
+      }
+
+    } else {
+
+      this.snackBar.open("Nenhum Projeto Cadastrado.", "⚠️", {duration:2000 });
     }
   }
 
@@ -112,6 +121,17 @@ export class QuadroComponent {
     this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
       console.log(project);
     });
+  }
+
+  deleteCard(card: Card) {
+    if(window.confirm('Are you sure you want to delete this card?')) {
+      this.projects[this.index].cards = this.projects[this.index].cards.filter(c => c !== card);
+      this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
+        console.log(project);
+      });
+    }
+
+
   }
 
 }

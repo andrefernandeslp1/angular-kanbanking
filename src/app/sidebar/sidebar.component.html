@@ -12,12 +12,14 @@
         <li>
           <i class="iconeAtivo fa-solid fa-laptop-file"></i>
           <a (click)="setProject(idx)" class="projetoAtivo m-1">{{projeto.title}}</a>
+          <i class="iconeAtivo fa-solid fa-trash-can m-1" style="float:right" (click)="deleteProject(projeto.id)"></i>
         </li>
       }
       @else {
         <li>
           <i class="fa-solid fa-laptop-file"></i>
           <a (click)="setProject(idx)" class="text-light m-1">{{projeto.title}}</a>
+          <i class="fa-solid fa-trash-can m-1" style="float:right" (click)="deleteProject(projeto.id)"></i>
         </li>
       }
     } @empty {
