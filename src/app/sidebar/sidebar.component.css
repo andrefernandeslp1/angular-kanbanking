@@ -1,5 +1,5 @@
 * {
-  color: white;
+
   /* background-color: #102E44; */
 }
 
@@ -12,6 +12,7 @@ ul {
   padding: 10px;
   /* margin: 0; */
   list-style-type: none;
+  color: white;
 }
 
 li {
@@ -24,6 +25,7 @@ a {
 }
 
 .projetoAtivo, .iconeAtivo {
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #FE6152;
 }
+

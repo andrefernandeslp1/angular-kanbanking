@@ -7,52 +7,10 @@
       "username": "André"
     },
     {
-      "email": "pedro@gmail.com",
-      "password": "$2a$10$18Tt6GpB9USNUJoTkAz8AO5jybDKyXxsCr9dw8KW9TjbEz2JO5z6y",
-      "username": "Pedro",
+      "email": "ricardo@gmail.com",
+      "password": "$2a$10$YgY6Hf5HdOf1kq4urCfac.KkzS2cJrxbndrKhNyYrLi.y0PcVKEIK",
+      "username": "ricardo",
       "id": 2
-    },
-    {
-      "email": "joao@gmail.com",
-      "password": "$2a$10$d/dTOwdoXo7tLyOU67MFVudsLsFP.r6rZf1fIzrAQip1GmTqf3lGO",
-      "username": "João",
-      "id": 3
-    },
-    {
-      "email": "caio@gmail.com",
-      "password": "$2a$10$9Tv8cIDygcJR4vtCEclLu.M5OYeZuaegnoCnRXAw3BCreIgfiFlXK",
-      "username": "caio",
-      "id": 4
-    },
-    {
-      "email": "tico@gmail.com",
-      "password": "$2a$10$ntjJniVB8XgKtZmDqaQQ8uC.5IIyZc0QMCDf8flh5f605K1avi.A2",
-      "username": "tico",
-      "id": 5
-    },
-    {
-      "email": "marcu@gmail.com",
-      "password": "$2a$10$UsJI0ivLdfIMnpk.2sTOKO5bv7Q8sQw.eJ01Mh3B.OxUdg3n8lism",
-      "username": "marcu",
-      "id": 6
-    },
-    {
-      "email": "taco@gmail.com",
-      "password": "$2a$10$UzUdhaHKhP7nW7uhL223Z.DKFyZatW9Ewslii2wnZfliEer1dRBra",
-      "username": "taco",
-      "id": 7
-    },
-    {
-      "email": "beto@gmail.com",
-      "password": "$2a$10$Lm0sItJviMeuSN1OYsJO2umcxkOSE/dECtl8HVpyUZxh5MLqTpDdK",
-      "username": "beto",
-      "id": 8
-    },
-    {
-      "email": "campos@gmail.com",
-      "password": "$2a$10$k0G2fyNgtCzHrufzOOOxW.Gsu68saQ1rJDm/jvzUNXtvsEGwj7ssC",
-      "username": "campos",
-      "id": 9
     }
   ],
   "projects": [
@@ -68,9 +26,9 @@
           "description": "Desenvolvimento do projeto",
           "tasks": [
             {
-              "text": "Desenvolver back-end",
-              "done": true,
-              "lineThrough": false
+              "text": "Desenvolver front-end",
+              "done": false,
+              "lineThrough": true
             },
             {
               "text": "Testar aplicação",
@@ -78,7 +36,18 @@
               "lineThrough": false
             },
             {
-              "text": "Desenvolver front-end",
+              "text": "Desenvolver back-end",
+              "done": false,
+              "lineThrough": true
+            }
+          ]
+        },
+        {
+          "title": "Orientador",
+          "description": "",
+          "tasks": [
+            {
+              "text": "marcar reunião",
               "done": false,
               "lineThrough": false
             }
@@ -87,168 +56,111 @@
       ]
     },
     {
-      "userId": 4,
-      "title": "p-1",
-      "description": "",
-      "cards": [],
-      "id": 4
-    },
-    {
-      "userId": 5,
-      "title": "p-11",
-      "description": "",
+      "id": 4,
+      "userId": 1,
+      "title": "Projeto de Pesquisa",
+      "description": "Projeto de Pesquisa",
       "cards": [
         {
-          "title": "c-11",
-          "description": "",
-          "tasks": []
-        }
-      ],
-      "id": 5
-    },
-    {
-      "userId": 5,
-      "title": "p-12",
-      "description": "",
-      "cards": [
-        {
-          "title": "c-12",
-          "description": "",
-          "tasks": []
-        }
-      ],
-      "id": 6
-    },
-    {
-      "userId": 6,
-      "title": "sssssssss",
-      "description": "",
-      "cards": [
-        {
-          "title": "ddd",
-          "description": "",
-          "tasks": []
-        }
-      ],
-      "id": 7
-    },
-    {
-      "userId": 7,
-      "title": "p-1",
-      "description": "",
-      "cards": [
-        {
-          "title": "c-1",
-          "description": "",
+          "id": 4,
+          "title": "Planejamento",
+          "description": "Planejamento do projeto",
           "tasks": [
             {
-              "text": "task 3",
+              "text": "Revisar literatura",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Definir metodologia",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Coletar dados",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "title": "Projeto de Extensão",
+      "description": "Projeto de Extensão",
+      "cards": [
+        {
+          "id": 5,
+          "title": "Implementação",
+          "description": "Implementação do projeto",
+          "tasks": [
+            {
+              "text": "Criar material de divulgação",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Desenvolver site",
               "done": true,
               "lineThrough": true
             },
             {
-              "text": "task 2",
+              "text": "Organizar evento",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "title": "Desenvolvimento de Software",
+      "description": "Projeto para desenvolvimento de um software de gestão",
+      "cards": [
+        {
+          "id": 6,
+          "title": "Análise de Requisitos",
+          "description": "Definição dos requisitos do software",
+          "tasks": [
+            {
+              "text": "Identificar stakeholders",
               "done": true,
               "lineThrough": true
             },
             {
-              "text": "task 1",
+              "text": "Coletar requisitos",
+              "done": true,
+              "lineThrough": false
+            },
+            {
+              "text": "Validar requisitos",
+              "done": true,
+              "lineThrough": false
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Design",
+          "description": "Design da arquitetura e interface do software",
+          "tasks": [
+            {
+              "text": "Definir arquitetura do sistema",
               "done": false,
               "lineThrough": true
-            }
-          ]
-        }
-      ],
-      "id": 8
-    },
-    {
-      "userId": 8,
-      "title": "teste",
-      "description": "",
-      "cards": [
-        {
-          "title": "card-teste",
-          "description": "",
-          "tasks": [
-            {
-              "text": "kkkk",
-              "done": false,
-              "lineThrough": false
             },
             {
-              "text": "wwww",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "sssssss",
+              "text": "Criar protótipos de interface",
               "done": false,
               "lineThrough": false
             }
           ]
         }
-      ],
-      "id": 9
-    },
-    {
-      "userId": 8,
-      "title": "teste2",
-      "description": "",
-      "cards": [],
-      "id": 10
-    },
-    {
-      "userId": 8,
-      "title": "teste3",
-      "description": "",
-      "cards": [],
-      "id": 11
-    },
-    {
-      "userId": 9,
-      "title": "sdssdas",
-      "description": "",
-      "cards": [
-        {
-          "title": "fffff",
-          "description": "",
-          "tasks": [
-            {
-              "text": "sdfsd",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "sdfsd",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "sdfds",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "ssssssssssss",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        }
-      ],
-      "id": 12
-    },
-    {
-      "userId": 9,
-      "title": "bbbbbb",
-      "description": "",
-      "cards": [],
-      "id": 13
+      ]
     }
   ]
 }

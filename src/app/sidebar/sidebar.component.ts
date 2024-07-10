@@ -32,12 +32,11 @@ export class SidebarComponent {
   }
 
   setProject(i: any) {
-    this.service.setIndex(i); // fica visível para todos os componentes subscritos a indexSource
-    // this.index = i; // NÃO fica visível para todos os componentes subscritos a indexSource
+    this.service.setIndex(i);
   }
 
   createProject() {
-    const projectName = window.prompt('Enter the project name');
+    const projectName = window.prompt('Insira o nome do projeto:');
     if (projectName) {
       const project = { userId: this.user.id, title: projectName, description: '', cards: [] } as Project;
       this.projects.push(project);
@@ -52,7 +51,7 @@ export class SidebarComponent {
   }
 
   deleteProject(id:any) {
-    if (window.confirm('Are you sure you want to delete this project?')) {
+    if (window.confirm('Tem certeza que quer apagar este Projeto?')) {
       this.projects.splice(this.projects.findIndex(project => project.id === id), 1);
       this.service.deleteProject(id).subscribe(project => {
         console.log(project);

@@ -62,12 +62,12 @@ export class QuadroComponent {
           console.log(project);
         });
       } else {
-        this.snackBar.open("Input Vazio.", "⚠️", {duration:2000 });
+        this.snackBar.open("Input Vazio.", "⚠️", {duration:3000 });
       }
 
     } else {
 
-      this.snackBar.open("Nenhum Projeto Cadastrado.", "⚠️", {duration:2000 });
+      this.snackBar.open("Nenhum Projeto Cadastrado.", "⚠️", {duration:3000 });
     }
   }
 
@@ -124,7 +124,7 @@ export class QuadroComponent {
   }
 
   deleteCard(card: Card) {
-    if(window.confirm('Are you sure you want to delete this card?')) {
+    if(window.confirm('Tem certeza que quer apagar o Card?')) {
       this.projects[this.index].cards = this.projects[this.index].cards.filter(c => c !== card);
       this.service.updateProject(this.projects[this.index], this.projects).subscribe(project => {
         console.log(project);
