@@ -11,6 +11,12 @@
       "password": "$2a$10$YgY6Hf5HdOf1kq4urCfac.KkzS2cJrxbndrKhNyYrLi.y0PcVKEIK",
       "username": "ricardo",
       "id": 2
+    },
+    {
+      "email": "thiago@gmail.com",
+      "password": "$2a$10$iwTX.Hn6ph5XqgBuB70J4eKw64msVRXkGM.tGJZGo72j2sg./8q4C",
+      "username": "Thiago",
+      "id": 3
     }
   ],
   "projects": [
@@ -161,6 +167,47 @@
           ]
         }
       ]
+    },
+    {
+      "userId": 3,
+      "title": "projeto 1",
+      "description": "",
+      "cards": [
+        {
+          "title": "card 1",
+          "description": "",
+          "tasks": [
+            {
+              "text": "task 2",
+              "done": false,
+              "lineThrough": true
+            },
+            {
+              "text": "task 1",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        },
+        {
+          "title": "card 2",
+          "description": "",
+          "tasks": []
+        },
+        {
+          "title": "card 3",
+          "description": "",
+          "tasks": []
+        }
+      ],
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "title": "projeto 2",
+      "description": "",
+      "cards": [],
+      "id": 8
     }
   ]
 }
