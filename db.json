@@ -21,154 +21,6 @@
   ],
   "projects": [
     {
-      "id": 3,
-      "userId": 1,
-      "title": "Projeto de TCC",
-      "description": "Projeto de TCC",
-      "cards": [
-        {
-          "id": 3,
-          "title": "Desenvolvimento",
-          "description": "Desenvolvimento do projeto",
-          "tasks": [
-            {
-              "text": "Desenvolver front-end",
-              "done": false,
-              "lineThrough": true
-            },
-            {
-              "text": "Testar aplicação",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "Desenvolver back-end",
-              "done": false,
-              "lineThrough": true
-            }
-          ]
-        },
-        {
-          "title": "Orientador",
-          "description": "",
-          "tasks": [
-            {
-              "text": "marcar reunião",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "title": "Projeto de Pesquisa",
-      "description": "Projeto de Pesquisa",
-      "cards": [
-        {
-          "id": 4,
-          "title": "Planejamento",
-          "description": "Planejamento do projeto",
-          "tasks": [
-            {
-              "text": "Revisar literatura",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "Definir metodologia",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "Coletar dados",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "title": "Projeto de Extensão",
-      "description": "Projeto de Extensão",
-      "cards": [
-        {
-          "id": 5,
-          "title": "Implementação",
-          "description": "Implementação do projeto",
-          "tasks": [
-            {
-              "text": "Criar material de divulgação",
-              "done": false,
-              "lineThrough": false
-            },
-            {
-              "text": "Desenvolver site",
-              "done": true,
-              "lineThrough": true
-            },
-            {
-              "text": "Organizar evento",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "title": "Desenvolvimento de Software",
-      "description": "Projeto para desenvolvimento de um software de gestão",
-      "cards": [
-        {
-          "id": 6,
-          "title": "Análise de Requisitos",
-          "description": "Definição dos requisitos do software",
-          "tasks": [
-            {
-              "text": "Identificar stakeholders",
-              "done": true,
-              "lineThrough": true
-            },
-            {
-              "text": "Coletar requisitos",
-              "done": true,
-              "lineThrough": false
-            },
-            {
-              "text": "Validar requisitos",
-              "done": true,
-              "lineThrough": false
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "title": "Design",
-          "description": "Design da arquitetura e interface do software",
-          "tasks": [
-            {
-              "text": "Definir arquitetura do sistema",
-              "done": false,
-              "lineThrough": true
-            },
-            {
-              "text": "Criar protótipos de interface",
-              "done": false,
-              "lineThrough": false
-            }
-          ]
-        }
-      ]
-    },
-    {
       "userId": 3,
       "title": "projeto 1",
       "description": "",
@@ -178,26 +30,52 @@
           "description": "",
           "tasks": [
             {
-              "text": "task 2",
-              "done": false,
-              "lineThrough": true
-            },
-            {
               "text": "task 1",
               "done": false,
               "lineThrough": false
+            },
+            {
+              "text": "task 2",
+              "done": false,
+              "lineThrough": true
             }
           ]
         },
         {
           "title": "card 2",
           "description": "",
-          "tasks": []
-        },
-        {
-          "title": "card 3",
-          "description": "",
-          "tasks": []
+          "tasks": [
+            {
+              "text": "tetetete",
+              "done": true,
+              "lineThrough": true
+            },
+            {
+              "text": "fsdfd",
+              "done": true,
+              "lineThrough": true
+            },
+            {
+              "text": "fsddfsd",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "fsfsd",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "fsdfds",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "fsdfds",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
         }
       ],
       "id": 7
@@ -208,6 +86,128 @@
       "description": "",
       "cards": [],
       "id": 8
+    },
+    {
+      "userId": 1,
+      "title": "TCC",
+      "description": "",
+      "cards": [],
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "title": "Obra do banheiro",
+      "description": "",
+      "cards": [],
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "title": "TEES 6",
+      "description": "",
+      "cards": [],
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "title": "Market Place",
+      "description": "",
+      "cards": [
+        {
+          "title": "Requisitos",
+          "description": "",
+          "tasks": [
+            {
+              "text": "Cliente",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Gateway",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Discovery Server",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Config Server",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Auth",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Pelo menos 4 microsserviços",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        },
+        {
+          "title": "Frontend",
+          "description": "",
+          "tasks": [
+            {
+              "text": "Regras de negócio",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Definição de telas",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Lógica",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Integração",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        },
+        {
+          "title": "Backend",
+          "description": "",
+          "tasks": [
+            {
+              "text": "Definição das entidades",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Lógica",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Arquitetura de Microsserviços",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Springboot",
+              "done": false,
+              "lineThrough": false
+            },
+            {
+              "text": "Data jpa repository",
+              "done": false,
+              "lineThrough": false
+            }
+          ]
+        }
+      ],
+      "id": 12
     }
   ]
 }
