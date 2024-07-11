@@ -2,7 +2,7 @@
 
 ![Screen Shot 2024-07-10 at 23 47 03](https://github.com/andrefernandeslp1/angular-kanbanking/assets/92834067/60a1588a-6310-43cc-ac9b-8b62e5bf8e26)
 
-![Uploading Screen Shot 2024-07-11 at 00.03.57-fullpage.png…]()
+![Uploading Screen Shot 2024-07-11 at 00.10.03-fullpage.png…]()
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
